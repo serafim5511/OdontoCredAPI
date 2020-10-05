@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="login-form">
+    <form method="post">
+        <div class="avatar">
+            <img id="img" src="~/images/1.png" alt="Avatar">
+        </div>
+        <h2 class="text-center">Login</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="E-mail" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Senha" required="required">
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+        </div>
+        <div class="clearfix">
+            <a href="#" class="pull-right">Esqueci minha senha</a>
+        </div>
+    </form>
+    <p class="text-center small">
+        Não possui uma conta?<a asp-controller="CadastroClientes" asp-action="Index">Cadastra-se já!</a>
+
+    </p>
+</div>
+
+<script>
+    setInterval(function () {
+        var v = Math.round(Math.random() * 5) + 1;
+        document.getElementById('img').src = "/images/" + v + ".png"
+    }, 6000);
+
+    $(".toggle-password").click(function () {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
+</script>

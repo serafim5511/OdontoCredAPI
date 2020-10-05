@@ -1,0 +1,119 @@
+﻿@model OdontoCred.Models.CadastroCliente
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="login-cadastro">
+    <h2 class="text-center">Olá, vamos nos conhecer</h2>
+    <div class="row">
+        <div class="form">
+            <form asp-action="Create">
+                <h3 class="text-center">Dados pessoais</h3>
+                <div id="step_1" class="step">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="NomeCliente" class="control-label"></label>
+                        <input asp-for="NomeCliente" class="form-control" />
+                        <span asp-validation-for="NomeCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+            <label asp-for="CpfCliente" class="control-label"></label>
+            <input asp-for="CpfCliente" class="form-control" />
+            <span asp-validation-for="CpfCliente" class="text-danger"></span>
+        </div>
+                    <div class="form-group">
+                        <label asp-for="EmailCliente" class="control-label"></label>
+                        <input asp-for="EmailCliente" class="form-control" />
+                        <span asp-validation-for="EmailCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataNascimentoCliente" class="control-label"></label>
+                        <input asp-for="DataNascimentoCliente" class="form-control" />
+                        <span asp-validation-for="DataNascimentoCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+            <label asp-for="CelularCliente" class="control-label"></label>
+            <input asp-for="CelularCliente" class="form-control" />
+            <span asp-validation-for="CelularCliente" class="text-danger"></span>
+        </div>
+                </div>
+                <h3 class="text-center">Endereço</h3>
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                    <label asp-for="CepResidencialCliente" class="control-label"></label>
+                    <input asp-for="CepResidencialCliente" class="form-control" />
+                    <span asp-validation-for="CepResidencialCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EnderecoResidencialCliente" class="control-label"></label>
+                    <input asp-for="EnderecoResidencialCliente" class="form-control" />
+                    <span asp-validation-for="EnderecoResidencialCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumeroResidencialCliente" class="control-label"></label>
+                    <input asp-for="NumeroResidencialCliente" class="form-control" />
+                    <span asp-validation-for="NumeroResidencialCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ComplementoResidencialCliente" class="control-label"></label>
+                    <input asp-for="ComplementoResidencialCliente" class="form-control" />
+                    <span asp-validation-for="ComplementoResidencialCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BairroCliente" class="control-label"></label>
+                    <input asp-for="BairroCliente" class="form-control" />
+                    <span asp-validation-for="BairroCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CidadeResidencialCliente" class="control-label"></label>
+                    <input asp-for="CidadeResidencialCliente" class="form-control" />
+                    <span asp-validation-for="CidadeResidencialCliente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EnderecoUFCliente" class="control-label"></label>
+                    <input asp-for="EnderecoUFCliente" class="form-control" />
+                    <span asp-validation-for="EnderecoUFCliente" class="text-danger"></span>
+                </div>*@
+                
+                <h3 class="text-center">Criação de senha</h3>
+                <div class="form-group">
+                    <label asp-for="SenhaCliente" class="control-label"></label>
+                    <input asp-for="SenhaCliente" class="form-control" required/>
+                    <span asp-validation-for="SenhaCliente" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="Senha" class="control-label"></label>
+                    <input asp-for="Senha" class="form-control" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>*@
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="btn btn-block btn-secondary" id="prev">Voltar</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" accesskey="">Cadastro</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>
+
+<style>
+    .fied-validation-error {
+        color: black !important;
+    }
+
+    .input-validation-error {
+        border: 1px solid red !important;
+    }
+</style>
